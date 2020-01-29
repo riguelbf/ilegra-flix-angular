@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test",
+    "test-coverage": "ng test --code-coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "docker-build": "docker build -t ilegraflix:dev .",
+    "docker-run": "docker run -v ${PWD}:/app -v /app/node_modules -p 8888:80 --rm ilegraflix:dev"
   },
   "private": true,
   "dependencies": {
