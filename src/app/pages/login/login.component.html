@@ -1,13 +1,25 @@
 <div class="container">
   <div class="sign">
-    <header>
+    <header data-testid="header">
       <img src="./../../../assets/images/logo.png" alt="IlegraFlix" />
       <h1>Sign in</h1>
     </header>
-    <form action="">
-      <input type="email" name="email" placeholder="Email" />
-      <input type="password" name="password" placeholder="Password" />
-      <input type="submit" value="Sign in" />
+    <form [formGroup]="form" (ngSubmit)="login()" data-testid="form">
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        data-testid="email"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        data-testid="password"
+      />
+      <button type="submit" [disabled]="!form.valid" data-testid="btn-submit">
+        Sign in
+      </button>
     </form>
   </div>
 </div>
