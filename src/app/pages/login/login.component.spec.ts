@@ -6,16 +6,17 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { Router, RouterModule } from '@angular/router';
 import { routes } from '../../routes';
+import { AppComponent } from '../../app.component';
+import { Location } from '@angular/common';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let location: Location;
   let router: Router;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginComponent],
+      declarations: [LoginComponent, AppComponent],
       imports: [
         ReactiveFormsModule,
         FormsModule,
@@ -25,7 +26,6 @@ describe('LoginComponent', () => {
       ]
     }).compileComponents();
     router = TestBed.get(Router);
-    location = TestBed.get(Location);
   }));
 
   beforeEach(() => {
@@ -52,7 +52,7 @@ describe('LoginComponent', () => {
       'input[data-testid="password"]'
     );
     const buttonSubmit = fixture.debugElement.nativeElement.querySelector(
-      'button[data-testid="password"]'
+      'button[data-testid="btn-submit"]'
     );
 
     expect(header).toBeTruthy();
@@ -69,8 +69,7 @@ describe('LoginComponent', () => {
     expect(component.form.valid).toBeTruthy();
 
     component.login();
-    expect(router.navigated).toBeTruthy();
-    expect(location.pathname).toBe('/');
+    expect('/').toEqual(router.url);
   });
 
   it('form invalid when empty', () => {
