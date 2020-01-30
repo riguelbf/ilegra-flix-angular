@@ -1,5 +1,16 @@
 # IlegraFlixAngular
 
+## Build status:
+
+ **[CircleCI](https://circleci.com/gh/riguelbf/ilegra-flix-angular)**
+
+![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/riguelbf/ilegra-flix-angular/master?style=for-the-badge)
+
+![CircleCI](https://img.shields.io/circleci/build/gh/riguelbf/ilegra-flix-angular/master?style=for-the-badge)
+
+![GitHub All Releases](https://img.shields.io/github/downloads/riguelbf/ilegra-flix-angular/total?style=for-the-badge)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
 ## Development server
@@ -28,21 +39,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Circle ci configurations
-
-version: 2
-jobs:
-  build:
-    working_directory: ~/my-project
-    docker:
-      - image: circleci/node:10-browsers
-    steps:
-      - checkout
-      - restore_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run: npm install
-      - save_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
-          paths:
-            - "node_modules"
-      - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-      - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
