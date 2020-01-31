@@ -6,11 +6,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { MyListComponent } from './pages/mylist/mylist.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HeaderComponent,
+    HomeComponent,
+    MyListComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -22,8 +33,10 @@ import { HttpClientModule } from '@angular/common/http';
       positionClass: 'toast-top-right',
       preventDuplicates: true
     }),
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
+  exports: [HeaderComponent, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent]
 })
