@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container">
+  <div *ngFor="let movie of movies" class="movie-item">
+    <div>
+      <img
+        data-testid="poster-path"
+        src="{{ movie.posterPath }}"
+        alt="Folder"
+        onClick=""
+      />
+      <div class="container-item-info">
+        <span>{{ movie.title || 'Title not found' }}</span>
+        <span>{{ movie.releaseDate.getFullYear() || '' }}</span>
+      </div>
+    </div>
+  </div>
+</div>
