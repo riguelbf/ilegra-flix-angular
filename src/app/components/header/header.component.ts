@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
     const currentUser = JSON.parse(
       (await localStorage.getItem('currentUser')) as any
     );
-    debugger;
+
     if (currentUser) {
       this.userEmail$ = currentUser.email as string;
       this.alreadyWatched$ = currentUser.watchedMovies.length;

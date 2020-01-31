@@ -62,7 +62,7 @@ describe('HeaderComponent', () => {
     expect(profileInfo).toBeTruthy();
   });
 
-  it('should defined profile values', () => {
+  it('should defined profile values', async () => {
     const userEmail = component.userEmail$;
     const watched = component.alreadyWatched$;
 
@@ -73,7 +73,7 @@ describe('HeaderComponent', () => {
       )
     );
 
-    component.setProfileInfo();
+    await component.setProfileInfo();
 
     expect(component.userEmail$).not.toEqual(userEmail);
     expect(component.alreadyWatched$).not.toEqual(watched);
