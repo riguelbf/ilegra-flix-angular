@@ -9,6 +9,7 @@ import { User } from '../../models/user.model';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
+import { LoginService } from '../../services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private loginService: LoginService
   ) {
     this.form = formBuilder.group({
       email: new FormControl('', Validators.email),
@@ -37,7 +39,15 @@ export class LoginComponent implements OnInit {
     this.toastr.success('Logged!', 'IlegraFlix!');
   }
 
-  login() {
-    this.router.navigate(['/home']);
+  async login() {
+    const email = this.form.controls.email.value;
+    const password = this.form.controls.password.value;
+
+    const existUser = await this.loginService
+      .login(email, password)
+      .toPromise();
+    existUser
+      ? this.router.navigate(['/home'])
+      : this.toastr.error('Login failed!');
   }
 }

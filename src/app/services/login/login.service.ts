@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, find } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,13 +13,18 @@ export class LoginService {
 
   login(email: string, password: string): Observable<any> {
     return this.http
-      .get(`${this.url$}?email=${email}&password=${password}`)
+      .get(`${this.url$}?user.email=${email}&user.password=${password}`)
       .pipe(
         map(user => {
-          if (user) {
-            localStorage.setItem('currentUser', JSON.stringify(user));
+          const existUser = (user as any[]).find(
+            u => u.email === email && u.password === password
+          );
+
+          if (existUser) {
+            localStorage.setItem('currentUser', JSON.stringify(existUser));
+            return existUser;
           }
-          return user;
+          return null;
         })
       );
   }

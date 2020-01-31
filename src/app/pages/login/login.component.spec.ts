@@ -7,7 +7,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { Router, RouterModule } from '@angular/router';
 import { routes } from '../../routes';
 import { AppComponent } from '../../app.component';
-import { Location } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -22,7 +22,8 @@ describe('LoginComponent', () => {
         FormsModule,
         RouterModule.forRoot(routes),
         RouterTestingModule.withRoutes(routes),
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        HttpClientModule
       ]
     }).compileComponents();
     router = TestBed.get(Router);
