@@ -28,11 +28,11 @@
       <p>Popularity: {{ _movieSelected && _movieSelected.popularity }}</p>
     </div>
     <p class="overview">{{ _movieSelected && _movieSelected.overview }}</p>
-    <button class="btn-red">
+    <button class="btn-red" (click)="addOnAlreadyWatched(_movieSelected)" >
       <!-- <FaPlay class="btn--icon" /> -->
       <span>Play</span>
     </button>
-    <button class="btn-mylist">
+    <button class="btn-mylist" (click)="addOnMyList(_movieSelected)">
       <!-- <FaPlus class="btn--icon" /> -->
       <span>ADD My List</span>
     </button>

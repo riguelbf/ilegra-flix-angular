@@ -78,8 +78,8 @@ describe('LoginComponent', () => {
 
   it('should to redirect to app', () => {
     expect(component.form.valid).toBeFalsy();
-    component.form.controls['email'].setValue('test@test.com');
-    component.form.controls['password'].setValue('123456789');
+    component.form.controls.email.setValue('test@test.com');
+    component.form.controls.password.setValue('123456789');
     expect(component.form.valid).toBeTruthy();
 
     component.login();

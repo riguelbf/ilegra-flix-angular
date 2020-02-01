@@ -4,9 +4,9 @@
       "id": 1,
       "email": "admin@gmail.com",
       "password": "12345",
-      "watchedMovies": [{}],
-      "mylist": [{}]
+      "watchedMovies": [],
+      "mylist": []
     }
   ],
-  "movies": [{}]
+  "movies": []
 }
