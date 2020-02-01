@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MyListComponent } from './pages/mylist/mylist.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MyListComponent } from './pages/mylist/mylist.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    MyListComponent
+    MyListComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

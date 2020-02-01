@@ -1,5 +1,4 @@
 .container {
-  position: fixed;
   z-index: 500;
   width: 65rem;
   height: 35rem;
@@ -130,16 +129,17 @@
     }
 
     &.show {
+      position: fixed;
       transition: 0.5s 0.3s ease-out;
       top: 25%;
-      left: 0;
+      left: 18%;
       visibility: visible;
       opacity: 1;
       width: 65rem;
       height: 30.5rem;
       border: solid 1px #fff;
       background-size: cover;
-      background-image: url('https://image.tmdb.org/t/p/original/riTANvQ8GKmQbgtC1ps3OfkU43A.jpg');
+      // background-image: url('https://image.tmdb.org/t/p/original/riTANvQ8GKmQbgtC1ps3OfkU43A.jpg');
       -moz-box-shadow: 0 0 5px 5px #888;
       -webkit-box-shadow: 0 0 5px 5px#888;
       box-shadow: 0 0 150px 150px #000;
@@ -147,6 +147,7 @@
 
     &.hide {
       visibility: hidden;
+      z-index: 0;
     }
   }
 }

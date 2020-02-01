@@ -1,16 +1,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-
-  h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.5em;
-    margin-left: 1rem;
-    margin-top: 1.5rem;
-    width: -webkit-fill-available;
-    text-transform: uppercase;
-  }
+  justify-content: space-around;
 
   div {
     display: flex;
@@ -26,23 +17,14 @@
   div.movie-item {
     display: inline-block;
     height: 25rem;
-    width: 17.5rem;
+    width: 18.5rem;
     cursor: pointer;
     transition: transform 0.3s;
     -webkit-transition: transform 0.3s;
     margin-bottom: 50px;
 
-    // @include responsive(tab_port) {
-    //   height: 20rem;
-    //   width: 14rem;
-    // }
-
     &:hover {
       transform: scale(1.25);
-
-      // @include responsive(tab_port) {
-      //   transform: scale(1.15);
-      // }
     }
 
     img {

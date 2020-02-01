@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container">
   <div *ngFor="let movie of movies" class="movie-item">
-    <div>
+    <div (click)="openModal(movie)">
       <img
         data-testid="poster-path"
         src="{{ movie.posterPath }}"
@@ -15,3 +15,4 @@
     </div>
   </div>
 </div>
+<app-modal [showModal]="showModal" [movieSelected]="movieSelected"></app-modal>
