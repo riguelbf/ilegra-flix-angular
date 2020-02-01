@@ -15,7 +15,7 @@ describe('MovieService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get movie list from the mobie api', () => {
+  xit('should get movie list from the mobie api', () => {
     const service: MovieService = TestBed.get(MovieService);
     const movies = service.getTrending();
     expect(movies).toBeGreaterThanOrEqual(0);
