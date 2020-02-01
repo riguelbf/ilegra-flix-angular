@@ -1,42 +1,45 @@
 <header>
   <div class="container" data-testid="header-container">
-    <img
-      data-testid="logo"
-      src="./../../../assets/images/logo.png"
-      alt="IlegraFlix"
-      data-testid="header-logo"
-    />
-    <nav data-testid="header-navbar">
-      <ul>
-        <li>
-          <a
-            href="#"
-            [routerLink]="['/mylist']"
-            routerLinkActive="router-link-active"
-          >
-            MyList
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            [routerLink]="['/linkb']"
-            routerLinkActive="router-link-active"
-          >
-            Link B
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            [routerLink]="['/lnkc']"
-            routerLinkActive="router-link-active"
-          >
-            Link C
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <div class="menu">
+      <img
+        data-testid="logo"
+        src="./../../../assets/images/logo.png"
+        alt="IlegraFlix"
+        data-testid="header-logo"
+      />
+      <nav data-testid="header-navbar">
+        <ul>
+          <li>
+            <a
+              href="#"
+              [routerLink]="['/mylist']"
+              routerLinkActive="router-link-active"
+            >
+              MyList
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              [routerLink]="['/metrics']"
+              routerLinkActive="router-link-active"
+            >
+              Metrics
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              [routerLink]="['/profile']"
+              routerLinkActive="router-link-active"
+            >
+              Profile
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
     <div class="profile" data-testid="header-profile-info">
       <fa-icon [icon]="faUser$"></fa-icon>
       <div class="profile-data">

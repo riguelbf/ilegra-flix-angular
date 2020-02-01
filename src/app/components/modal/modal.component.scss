@@ -5,33 +5,14 @@
   top: 20%;
   left: 18%;
   color: #fff;
+  visibility: hidden;
 
   div.content {
     padding-top: 3rem;
     padding-left: 5rem;
 
-    // @include responsive(tab_port) {
-    //   background: linear-gradient(
-    //     90deg,
-    //     rgb(0, 0, 0) 55%,
-    //     rgba(0, 0, 0, 0.733),
-    //     transparent
-    //   );
-    //   width: 88%;
-    // }
-
-    // @include responsive(tab_medium) {
-    //   background: linear-gradient(90deg, rgba(0, 0, 0, 0.966) 65%, transparent);
-    //   width: 100%;
-    // }
-
-    // @include responsive(phone) {
-    //   padding-top: 1rem;
-    //   padding-left: 1rem;
-    // }
-
     .title {
-      font-size: 2rem;
+      font-size: 50px;
     }
 
     .rating {
@@ -42,10 +23,11 @@
     .info {
       padding-top: 1.6rem;
       font-size: 1rem;
+    }
 
-      // @include responsive(phone) {
-      //   padding-top: 1.2rem;
-      // }
+    p {
+      margin-top: 10px;
+      font-size: 20px;
     }
 
     .episode {
@@ -54,30 +36,13 @@
     }
 
     .overview {
-      color: #888;
+      color: #fff;
       padding-top: 2rem;
-      font-size: 1rem;
+      font-size: 22px;
       hyphens: auto;
       width: 60%;
       line-height: 1.2;
-
-      // @include responsive(lg_desktop) {
-      //   width: 60%;
-      //   font-size: 1.8rem;
-      // }
-
-      // @include responsive(tab_port) {
-      //   width: 80%;
-      // }
-
-      // @include responsive(tab_medium) {
-      //   width: 95%;
-      //   color: rgba(255, 255, 255, 0.877);
-      // }
-      // @include responsive(phone) {
-      //   padding-top: 1rem;
-      //   font-size: 1.7rem;
-      // }
+      height: 9rem;
     }
 
     button {
@@ -94,10 +59,6 @@
       padding: 1rem 2rem 1rem 2rem;
       transition: all 0.2s;
       align-items: baseline;
-
-      // @include responsive(phone) {
-      //   margin-top: 1rem;
-      // }
 
       &:hover {
         transform: scale(1.09);
@@ -139,7 +100,6 @@
       height: 30.5rem;
       border: solid 1px #fff;
       background-size: cover;
-      // background-image: url('https://image.tmdb.org/t/p/original/riTANvQ8GKmQbgtC1ps3OfkU43A.jpg');
       -moz-box-shadow: 0 0 5px 5px #888;
       -webkit-box-shadow: 0 0 5px 5px#888;
       box-shadow: 0 0 150px 150px #000;

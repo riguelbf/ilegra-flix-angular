@@ -6,14 +6,58 @@ header .container {
   height: 4em;
   margin-bottom: 30px;
 
-  img {
-    top: 2rem;
-    margin: 2rem;
-    height: 5rem;
-    padding: 0.5rem;
-    transform: rotate(-20deg);
-    background-color: #17181b;
-    border-radius: 20%;
+  .menu {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      top: 2rem;
+      margin: 2rem;
+      height: 5rem;
+      padding: 0.5rem;
+      transform: rotate(-20deg);
+      background-color: #17181b;
+      border-radius: 20%;
+    }
+
+    nav ul {
+      list-style: none;
+      margin-top: 70px;
+      width: 260px;
+
+      li {
+        display: inline;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-left: 1rem;
+        text-decoration: none;
+
+        a {
+          transition: opacity 0.3s;
+          width: 14%;
+          padding: 0.75rem 0;
+          margin: 0;
+          text-decoration: none;
+          color: #fff;
+          cursor: pointer;
+
+          &:hover {
+            color: #ed2337;
+            opacity: 0.7;
+          }
+        }
+
+        &.two:hover ~ hr {
+          margin-left: 05%;
+        }
+
+        &.three:hover ~ hr {
+          margin-left: 50%;
+        }
+      }
+    }
   }
 
   .profile {
@@ -45,45 +89,6 @@ header .container {
       color: #ed2337;
       font-size: 2em;
       margin-right: 8px;
-    }
-  }
-
-  nav ul {
-    list-style: none;
-    width: 100%;
-    flex-direction: column;
-
-    li {
-      display: inline;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      font-size: 1.2em;
-      margin-left: 1rem;
-      text-decoration: none;
-
-      a {
-        transition: opacity 0.3s;
-        width: 14%;
-        padding: 0.75rem 0;
-        margin: 0;
-        text-decoration: none;
-        color: #fff;
-        cursor: pointer;
-
-        &:hover {
-          color: #ed2337;
-          opacity: 0.7;
-        }
-      }
-
-      &.two:hover ~ hr {
-        margin-left: 05%;
-      }
-
-      &.three:hover ~ hr {
-        margin-left: 50%;
-      }
     }
   }
 }
