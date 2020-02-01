@@ -1,32 +1,34 @@
 <div class="container">
-  <div
-    [className]="classModal"
-    [ngStyle]="{
-      'background-image':
-        'url(' +
-        'https://image.tmdb.org/t/p/original/' +
-        _movieSelected.backdropPath +
-        ')',
-      'background-size': 'cover'
-    }"
-  >
-    <h1 class="title">{{ _movieSelected.title || _movieSelected.name }}</h1>
-    <div class="info">
-      <p class="rating">Rating: {{ _movieSelected.vote_average * 10 }}%</p>
-      <p>Release date:</p>
-      <p>Popularity: {{ _movieSelected.popularity }}</p>
+  <ng-template *ngIf="_movieSelected != undefined">
+    <div
+      [className]="classModal"
+      [ngStyle]="{
+        'background-image':
+          'url(' +
+          'https://image.tmdb.org/t/p/original/' +
+          _movieSelected.backdropPath +
+          ')',
+        'background-size': 'cover'
+      }"
+    >
+      <h1 class="title">{{ _movieSelected.title || _movieSelected.name }}</h1>
+      <div class="info">
+        <p class="rating">Rating: {{ _movieSelected.vote_average * 10 }}%</p>
+        <p>Release date:</p>
+        <p>Popularity: {{ _movieSelected.popularity }}</p>
+      </div>
+      <p class="overview">{{ _movieSelected.overview }}</p>
+      <button class="btn-red">
+        <!-- <FaPlay class="btn--icon" /> -->
+        <span>Play</span>
+      </button>
+      <button class="btn-mylist">
+        <!-- <FaPlus class="btn--icon" /> -->
+        <span>ADD My List</span>
+      </button>
+      <button class="btn-close" (click)="close()">
+        Close
+      </button>
     </div>
-    <p class="overview">{{ _movieSelected.overview }}</p>
-    <button class="btn-red">
-      <!-- <FaPlay class="btn--icon" /> -->
-      <span>Play</span>
-    </button>
-    <button class="btn-mylist">
-      <!-- <FaPlus class="btn--icon" /> -->
-      <span>ADD My List</span>
-    </button>
-    <button class="btn-close" (click)="close()">
-      Close
-    </button>
-  </div>
+  </ng-template>
 </div>

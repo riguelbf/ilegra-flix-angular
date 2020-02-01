@@ -1,40 +1,39 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
-import { HeaderComponent } from '../../components/header/header.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { MyListComponent } from './mylist.component';
 import { routes } from '../../routes';
+import { RouterTestingModule } from '@angular/router/testing';
 import { LoginComponent } from '../login/login.component';
-import { MyListComponent } from '../mylist/mylist.component';
+import { HomeComponent } from '../home/home.component';
+import { HeaderComponent } from '../../components/header/header.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('MylistComponent', () => {
+  let component: MyListComponent;
+  let fixture: ComponentFixture<MyListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
+        MyListComponent,
+        LoginComponent,
         HomeComponent,
         HeaderComponent,
-        LoginComponent,
-        MyListComponent,
         ModalComponent
       ],
       imports: [
         RouterTestingModule.withRoutes(routes),
-        FontAwesomeModule,
         ReactiveFormsModule,
-        HttpClientModule
+        FormsModule,
+        FontAwesomeModule
       ]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(MyListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

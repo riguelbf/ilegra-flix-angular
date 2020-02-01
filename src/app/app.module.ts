@@ -38,7 +38,7 @@ import { ModalComponent } from './components/modal/modal.component';
     HttpClientModule,
     FontAwesomeModule
   ],
-  exports: [HeaderComponent, FontAwesomeModule],
+  exports: [HeaderComponent, FontAwesomeModule, ModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

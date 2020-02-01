@@ -30,7 +30,7 @@ export class MovieModel extends BaseModel
     this.originalLanguage = originalLanguage;
     this.originalTitle = originalTitle;
     this.genreIds = genreIds;
-    this.backdropPath = backdropPath;
+    this.backdropPath = backdropPath || '';
     this.adult = adult;
     this.overview = overview;
     this.posterPath = posterPath;

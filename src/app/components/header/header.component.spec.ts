@@ -7,6 +7,12 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from '../../pages/login/login.component';
 import { HomeComponent } from '../../pages/home/home.component';
 import { MyListComponent } from '../../pages/mylist/mylist.component';
+import {
+  FaIconComponent,
+  FontAwesomeModule
+} from '@fortawesome/angular-fontawesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from '../modal/modal.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -18,9 +24,15 @@ describe('HeaderComponent', () => {
         HeaderComponent,
         LoginComponent,
         HomeComponent,
-        MyListComponent
+        MyListComponent,
+        ModalComponent
       ],
-      imports: [RouterModule.forRoot(routes)]
+      imports: [
+        RouterModule.forRoot(routes),
+        ReactiveFormsModule,
+        FormsModule,
+        FontAwesomeModule
+      ]
     }).compileComponents();
 
     const {
@@ -50,7 +62,7 @@ describe('HeaderComponent', () => {
     );
 
     const navbar = fixture.debugElement.nativeElement.querySelector(
-      'div[data-testid="header-navbar"]'
+      'nav[data-testid="header-navbar"]'
     );
 
     const profileInfo = fixture.debugElement.nativeElement.querySelector(

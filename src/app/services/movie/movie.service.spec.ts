@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
 import { MovieService } from './movie.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 describe('MovieService', () => {
   let movies = [];
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({ imports: [HttpClientModule] });
   });
 
   it('should be created', () => {

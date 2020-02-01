@@ -8,6 +8,11 @@ import { Router, RouterModule } from '@angular/router';
 import { routes } from '../../routes';
 import { AppComponent } from '../../app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from '../home/home.component';
+import { MyListComponent } from '../mylist/mylist.component';
+import { HeaderComponent } from 'src/app/components/header/header.component';
+import { ModalComponent } from '../../components/modal/modal.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -16,14 +21,22 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginComponent, AppComponent],
+      declarations: [
+        LoginComponent,
+        AppComponent,
+        HomeComponent,
+        MyListComponent,
+        HeaderComponent,
+        ModalComponent
+      ],
       imports: [
         ReactiveFormsModule,
         FormsModule,
         RouterModule.forRoot(routes),
         RouterTestingModule.withRoutes(routes),
         ToastrModule.forRoot(),
-        HttpClientModule
+        HttpClientModule,
+        FontAwesomeModule
       ]
     }).compileComponents();
     router = TestBed.get(Router);
