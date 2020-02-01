@@ -38,3 +38,8 @@ Run `npm run docker-build` to build a docker image of project.
 
 ### Executing project from docker image
 Run `npm run docker-run` to run the project from a docker image. Obs: for to use this command, is necessary to have docker image pre builded.
+
+## User for first access
+
+user: admin@gmail.com
+password: 12345
