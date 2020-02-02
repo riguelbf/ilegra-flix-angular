@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MyListComponent } from './pages/mylist/mylist.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ModalPlayerComponent } from './components/modal-player/modal-player.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ModalComponent } from './components/modal/modal.component';
     HeaderComponent,
     HomeComponent,
     MyListComponent,
-    ModalComponent
+    ModalComponent,
+    ModalPlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -38,8 +40,8 @@ import { ModalComponent } from './components/modal/modal.component';
     HttpClientModule,
     FontAwesomeModule
   ],
-  exports: [HeaderComponent, FontAwesomeModule, ModalComponent],
+  exports: [HeaderComponent, FontAwesomeModule, ModalComponent, ModalPlayerComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

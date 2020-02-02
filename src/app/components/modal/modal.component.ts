@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovieModel } from '../../models/movie.model';
 import { ToastrService } from 'ngx-toastr';
 
@@ -21,6 +21,8 @@ export class ModalComponent implements OnInit {
   set movieSelected(movieSelected: MovieModel) {
     this._movieSelected = movieSelected;
   }
+
+  public showModalPlayer: boolean;
 
   constructor(private toastr: ToastrService) { }
 
@@ -45,6 +47,7 @@ export class ModalComponent implements OnInit {
 
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
 
+    this.showModalPlayer = true;
     this.toastr.success('Added with success on your list of already watched');
   }
 }
